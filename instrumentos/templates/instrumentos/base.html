@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Casa de Música - Django</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50">
+    <nav class="bg-indigo-700 p-4 text-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center">
+            <h1 class="text-2xl font-bold">🎸 Casa de Música</h1>
+            <div class="space-x-6">
+                <a href="{% url 'inicio' %}" class="hover:text-indigo-200">Inicio</a>
+                <a href="{% url 'instrumento_nuevo' %}" class="hover:text-indigo-200">+ Instrumento</a>
+                <a href="{% url 'marca_nueva' %}" class="hover:text-indigo-200">+ Marca</a>
+                <a href="{% url 'cliente_nuevo' %}" class="hover:text-indigo-200">+ Cliente</a>
+                <a href="{% url 'buscar' %}" class="bg-indigo-500 px-3 py-1 rounded hover:bg-indigo-400">🔍 Buscar</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mx-auto mt-10 p-8 bg-white rounded-xl shadow-lg border border-gray-100">
+        {% block content %}
+        {% endblock %}
+    </div>
+</body>
+</html>
